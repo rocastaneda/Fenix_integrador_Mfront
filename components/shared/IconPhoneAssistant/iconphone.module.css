@@ -1,0 +1,29 @@
+.boxphone {
+  position: relative;
+}
+
+.btnphone {
+  position: absolute;
+  right: 16px;
+  border: none;
+  background-color: transparent;
+  bottom: 0px;
+  z-index: 1;
+  top: 0px;
+}
+
+.btnphone_layout {
+  position: absolute;
+  right: 16px;
+  border: none;
+  background-color: transparent;
+  bottom: 10px;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .btnphone {
+    right: 6px;
+    top: 415px;
+  }
+}
