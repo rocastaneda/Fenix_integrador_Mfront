@@ -1,0 +1,27 @@
+.component button {
+  padding: 16px 24px;
+  float: right;
+  /* rojoPrimario */
+  background: #65184e;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  color: #fff;
+}
+.component button > img {
+  margin-left: 5px;
+  vertical-align: bottom;
+  filter: brightness(0) invert(1);
+}
+.component button:disabled {
+  background: #dbdbdb;
+  color: #989898;
+}
+.component button:disabled > img {
+  filter: none;
+}
+.component button:focus {
+  outline: none;
+}
