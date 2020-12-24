@@ -17,13 +17,13 @@ export default Object.freeze({
   funnelFlujoSolicitudMf: {
     module: './RequestFlow',
     scope: 'journeyMF',
-    remoteUrl: 'https://fnx-joruney-v2-7fb5f8.netlify.app',
+    remoteUrl: 'https://fnx-joruney-v2-7fb5f8.netlify.app/remoteEntry.js',
     // remoteUrl: 'http://localhost:4000/remoteEntry.js',
   },
   tablaAmortizacionMf: {
-    module: './TablaDetalleView',
-    scope: 'tablaDetalleMf',
-    remoteUrl: 'https://fnx-tabla-amort-e66c76.netlify.app/remoteEntry.js',
+    module: './TablasView',
+    scope: 'fnxRecomendaciones',
+    remoteUrl: 'https://fnx-recomendaciones-ae740a.netlify.app/remoteEntry.js',
     //remoteUrl: 'http://localhost:5000/remoteEntry.js',
   },
   tablaComparativaMf: {
@@ -36,33 +36,23 @@ export default Object.freeze({
   inicioSolicitud: {
     module: './Stepper',
     scope: 'journeyMF',
-    remoteUrl: 'https://fnx-joruney-v2-7fb5f8.netlify.app',
-    // remoteUrl: 'http://localhost:4000/remoteEntry.js',
+    remoteUrl: 'https://fnx-joruney-v2-7fb5f8.netlify.app/remoteEntry.js',
+    //remoteUrl: 'http://localhost:4000/remoteEntry.js',
   },
-  acercaDeTi: {
-    datosBasicos: {
-      module: './AcercaDeTiDatosBasicos',
-      scope: 'AcercaDeTiDatosBasicos',
-      remoteUrl:
-        'https://fnx-acerca-datos-bascicos-5384a5.netlify.app/remoteEntry.js',
-    },
-    codigoVerificacion: {
-      module: './AcercaDeTiCodigo',
-      scope: 'AcercaDeTiCodigo',
-      remoteUrl: 'https://fnx-acerca-codigo-da335a.netlify.app/remoteEntry.js',
-    },
-    cargaIdentificacion: {
-      module: './CargaDeIdentificacion',
-      scope: 'CargaDeIdentificacion',
-      remoteUrl:
-        'https://carga-identificacion-7f0376.netlify.app/remoteEntry.js',
-      //remoteUrl: 'http://localhost:4000/remoteEntry.js',
-    },
-    cargaInformacionDomiciliaria: {
-      module: './UploadHomeInformation',
-      scope: 'uploadHomeInformation',
-      remoteUrl:
-        'https://fenix-carga-rapida-informacion-domicilio.netlify.app/remoteEntry.js',
-    },
+  createUser: {
+    module: './CreateUserNavigator',
+    scope: 'createUserMicro',
+    remoteUrl: 'https://fnx-creacion-usuario-58b4ef.netlify.app/remoteEntry.js',
+  },
+  registerClient: {
+    module: './RegisterClient',
+    scope: 'microFrontRegisterClient',
+    remoteUrl: 'https://fnx-registro-cliente-d5c6f3.netlify.app/remoteEntry.js',
+    // remoteUrl: 'http://localhost:4200/remoteEntry.js',
+  },
+  requestCredit: {
+    module: './NavigatorRequestCredit',
+    scope: 'RequestCredit',
+    remoteUrl: 'https://fnx-solicitud-credito.netlify.app/remoteEntry.js',
   },
 });

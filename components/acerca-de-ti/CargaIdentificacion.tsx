@@ -2,15 +2,19 @@ import React from 'react';
 import MfsUrl from '../../constants/MfUrls';
 import RemoteWrapper from '../../utils/RemoteWrapper';
 
-const cargaIdentificacion = MfsUrl.acercaDeTi.cargaIdentificacion;
+const registerClientModel = MfsUrl.registerClient;
 
-export const CargaIdentificacion = ({ triggerNextStep }) => {
+
+const registerClient = ({ triggerNextStep, redirectNext }) => {
   return (
     <RemoteWrapper
-      scope={cargaIdentificacion.scope}
-      module={cargaIdentificacion.module}
-      remoteUrl={cargaIdentificacion.remoteUrl}
+      scope={registerClientModel.scope}
+      module={registerClientModel.module}
+      remoteUrl={registerClientModel.remoteUrl}
       triggerNextStep={triggerNextStep}
+      redirectNext={redirectNext}
     />
   );
 };
+
+export default registerClient;

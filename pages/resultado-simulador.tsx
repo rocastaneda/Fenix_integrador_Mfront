@@ -10,11 +10,7 @@ const ResultadoSimulador = () => {
   return (
     <div>
       <Header />
-
       <div style={{ paddingTop: '20px' }}>
-        <TablaComparativa redirectNext={redirectNext} />
-      </div>
-      <div>
         <TablaAmortizacion redirectNext={redirectNext} />
       </div>
       <div>
