@@ -16,6 +16,34 @@ a {
   text-decoration: none;
 }
 
+.funnel_wrapper {
+  width: calc((463 / 1366) * 100%);
+  min-width: 400px;
+}
+
 * {
   box-sizing: border-box;
+}
+
+@media (max-width: 899px) {
+  .header {
+    width: 100%;
+  }
+
+  .display_none_funnel {
+    display: none;
+  }
+  .funnel_wrapper {
+    width: 100%;
+  }
+  .button_center {
+    position: relative;
+    bottom: 160px;
+    right: calc(50% - 126px / 2);
+  }
+}
+@media (min-width: 900px) {
+  .hide_on_desktop_main {
+    display: none;
+  }
 }

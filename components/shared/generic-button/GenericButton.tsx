@@ -20,7 +20,7 @@ const GenericButton: FC<ButtonProps> = ({
   text,
 }: ButtonProps): ReactElement => {
   return (
-    <div className={styles.component}>
+    <div className={[styles.component, className].join(' ').trim()}>
       <button
         className={styles.button}
         {...{ disabled, text }}
@@ -28,7 +28,7 @@ const GenericButton: FC<ButtonProps> = ({
         type='button'
       >
         {children || text}
-        <img src={disabled === true ? NextDisabled : Next} alt='Siguiente' />
+        {/* <img src={disabled === true ? NextDisabled : Next} alt='Siguiente' /> */}
       </button>
     </div>
   );

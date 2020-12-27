@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import FormularioDatosBasicos from '../../components/acerca-de-ti/FormularioDatosBasicos';
+import CreacionUsuario from '../../components/acerca-de-ti/CreacionUsuario';
 import { store } from '../../redux/store';
-import CodigoVerificacion from '../../components/acerca-de-ti/CodigoVerificacion';
 import Layout from '../../components/acerca-de-ti/Layout';
 import { Stack } from '../../utils/simpleStack';
 import { triggerNextStep } from '../../redux/actions/genericActions';
-import { CargaIdentificacion } from '../../components/acerca-de-ti/CargaIdentificacion';
+import RegisterClient from '../../components/acerca-de-ti/CargaIdentificacion';
 import IconPhoneAssistant from '../../components/shared/IconPhoneAssistant/IconPhoneAssistant';
-import CargaInformacionDomiciliaria from '../../components/acerca-de-ti/CargaInformacionDomiciliaria';
+import { redirectNext } from '../../redux/actions/genericActions';
 
 enum ActionsNav {
   BACK = 'BACK',
@@ -17,7 +16,6 @@ enum ActionsNav {
 export const navStack = new Stack<string>();
 navStack.push('default');
 const firstView = navStack.peek();
-//we control the navigation with a stack
 
 const ComponentSwitcher = () => {
   const [step, setStep] = useState<string>(firstView);
@@ -42,16 +40,10 @@ const ComponentSwitcher = () => {
 
   switch (step) {
     case 'default':
-      return <FormularioDatosBasicos triggerNextStep={triggerNextStep} />;
+      return <CreacionUsuario triggerNextStep={triggerNextStep} />;
 
-    case 'verificationCode':
-      return <CodigoVerificacion triggerNextStep={triggerNextStep} />;
-
-    case 'threeStepForm':
-      return <CargaIdentificacion triggerNextStep={triggerNextStep} />;
-
-    case 'addressInformation':
-      return <CargaInformacionDomiciliaria />;
+    case 'registerClient':
+      return <RegisterClient triggerNextStep={triggerNextStep} redirectNext={redirectNext} />;
 
     default:
       return null;

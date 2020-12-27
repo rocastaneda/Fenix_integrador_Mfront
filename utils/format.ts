@@ -5,7 +5,6 @@ export interface MoneyFormat {
 
 export const stringValue2MoneyFormat = (stringValue: string): MoneyFormat => {
   const numberValue = Number(stringValue.replace(/\D/g, ''));
-  // eslint-disable-next-line no-restricted-globals
   if (isNaN(numberValue)) {
     return { numberValue };
   }
