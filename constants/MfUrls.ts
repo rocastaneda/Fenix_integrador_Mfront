@@ -55,4 +55,10 @@ export default Object.freeze({
     scope: 'RequestCredit',
     remoteUrl: 'https://fnx-solicitud-credito.netlify.app/remoteEntry.js',
   },
+  clientExist: {
+    module: './ClientExist',
+    scope: 'createUserMicro',
+    remoteUrl: 'https://fnx-creacion-usuario-58b4ef.netlify.app/remoteEntry.js',
+    // remoteUrl: 'http://localhost:4000/remoteEntry.js',
+  },
 });

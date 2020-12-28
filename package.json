@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "node bluemix.setup.js",
+    "next-start": "next start"
   },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
+    "cfenv": "^1.2.3",
     "contentful": "^7.14.12",
     "immutability-helper": "^3.1.1",
     "next": "10.0.1",
@@ -21,6 +23,7 @@
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
+    "shelljs": "^0.8.4",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {

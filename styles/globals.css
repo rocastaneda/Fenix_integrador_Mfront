@@ -25,6 +25,16 @@ a {
   box-sizing: border-box;
 }
 
+.display_flex {
+  display: flex;
+}
+.content_footer_global {
+  flex: 1;
+  background: #fafafa;
+}
+.background-color_global {
+  background-color: #65184e;
+}
 @media (max-width: 899px) {
   .header {
     width: 100%;
