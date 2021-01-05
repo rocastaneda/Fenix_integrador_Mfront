@@ -1,0 +1,96 @@
+.support-button {
+  position: fixed;
+  right: 24px;
+  bottom: 80px;
+  width: 44px;
+  font-size: 22px;
+  z-index: 204;
+}
+.support-button ul {
+  list-style: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  margin: 0;
+  transition-property: height;
+  transition-delay: 0s;
+  transition-duration: 0.8s;
+  position: relative;
+}
+.support-button ul.activo li a {
+  left: 0px;
+  transform: scale(1);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.support-button ul.activo li a.is-pqrs {
+  bottom: 52px;
+}
+.support-button ul.activo li a.is-support {
+  bottom: 104px;
+}
+.support-button ul.activo li a.is-contact {
+  bottom: 156px;
+}
+.support-button ul.activo li a.is-quicker {
+  bottom: 208px;
+}
+.support-button ul li {
+  text-align: center;
+  width: 44px;
+  height: 44px;
+  line-height: 55px;
+  cursor: pointer;
+  transition-property: color, transform;
+  transition-duration: 0.6s;
+  transition-delay: 0.6s;
+}
+.support-button ul li.is-share {
+  position: relative;
+  z-index: 2;
+  background-color: #000a12;
+  border-radius: 22px;
+  transition-property: transform;
+  transition-duration: 0.4s;
+}
+.support-button ul li a {
+  width: 44px;
+  border-radius: 22px;
+  height: 44px;
+  line-height: 55px;
+  display: block;
+  color: #343a40;
+  background: #515b62;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  transform: scale(0);
+  transition-property: bottom, transform;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.63, 0.25, 0.4, 1.5);
+}
+.support-button ul li a:hover {
+  animation: rebote 1s 1;
+  background-color: #283238;
+}
+.support-button ul li a.is-pqrs {
+  transition-delay: 0.1s;
+}
+.support-button ul li a.is-support {
+  transition-delay: 0.2s;
+}
+.support-button ul li a.is-contact {
+  transition-delay: 0.3s;
+}
+.support-button ul li a.is-quicker {
+  transition-delay: 0.4s;
+}
+@media (max-width: 860px) {
+  .support-button {
+    right: 18px;
+  }
+}
+@media (min-width: 861px) {
+  .support-button {
+    bottom: 20px;
+  }
+}

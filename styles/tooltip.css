@@ -1,0 +1,73 @@
+/*these tooltips can work with any element eg buttons,div etc
+*/
+
+/*start left tip*/
+.tooltip .tooltip-left {
+  min-width: 200px;
+  top: 50%;
+  right: 100%;
+  margin-right: 20px;
+  transform: translate(0, -50%);
+  padding: 10px;
+  color: #444444;
+  background-color: #fafafa;
+  font-weight: normal;
+  font-size: 13px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 30px rgba(152, 152, 152, 0.25);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.tooltip:hover .tooltip-left {
+  visibility: visible;
+  opacity: 1;
+}
+.tooltip:focus .tooltip-left {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltip-left i {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -12px;
+  width: 12px;
+  height: 24px;
+  overflow: hidden;
+}
+.tooltip .tooltip-left p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  color: #283238;
+  margin: 0px;
+}
+.tooltip .tooltip-left .a_purple {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  color: #6f2659;
+  margin: 0px;
+}
+
+.tooltip .tooltip-left i::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background-color: #eeeeee;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+/*end left*/
