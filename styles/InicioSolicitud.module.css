@@ -1,0 +1,51 @@
+h3.title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+  color: #283238;
+  font-weight: bold;
+}
+
+p.detail {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #515b62;
+}
+
+h3.title,
+p.detail {
+  text-align: center;
+}
+
+.footer_sticky_bottom {
+  clear: both;
+  position: relative;
+  height: 199px;
+  margin-top: 120px;
+}
+
+.boxtitle {
+  margin: 28px 0px 0px 60px;
+  position: relative;
+}
+
+.btnback {
+  display: block;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: left;
+  color: #65184e;
+}
+
+.btnback img {
+  margin-right: 3px;
+}
+
+.btnback:hover {
+  cursor: pointer;
+  color: #65184e;
+  text-decoration: none;
+}
