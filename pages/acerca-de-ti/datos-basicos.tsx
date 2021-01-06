@@ -5,7 +5,6 @@ import Layout from '../../components/acerca-de-ti/Layout';
 import { Stack } from '../../utils/simpleStack';
 import { triggerNextStep } from '../../redux/actions/genericActions';
 import RegisterClient from '../../components/acerca-de-ti/CargaIdentificacion';
-import IconPhoneAssistant from '../../components/shared/IconPhoneAssistant/IconPhoneAssistant';
 import { redirectNext } from '../../redux/actions/genericActions';
 
 enum ActionsNav {
@@ -43,7 +42,12 @@ const ComponentSwitcher = () => {
       return <CreacionUsuario triggerNextStep={triggerNextStep} />;
 
     case 'registerClient':
-      return <RegisterClient triggerNextStep={triggerNextStep} redirectNext={redirectNext} />;
+      return (
+        <RegisterClient
+          triggerNextStep={triggerNextStep}
+          redirectNext={redirectNext}
+        />
+      );
 
     default:
       return null;
@@ -54,7 +58,6 @@ const DatosBasicosView = () => {
   return (
     <Layout>
       <ComponentSwitcher />
-      <IconPhoneAssistant isWithLayout={true} />
     </Layout>
   );
 };

@@ -1,4 +1,20 @@
 import Axios, { AxiosRequestConfig } from 'axios';
+import getEnvVars from '../../environment';
+
+const makeSimRequestEnvs = getEnvVars().makeSimRequest.requestData;
+
+const {
+  base_url_oag,
+  custom_header_auth_token,
+  custom_header_idConsumidor,
+  custom_header_idDestino,
+  custom_header_unidadOrganizacional,
+  custom_header_canal,
+  journey_body_idProducto,
+  journey_body_idSubproducto,
+  journey_body_moneda,
+  journey_body_sistemaAmortizacion,
+} = makeSimRequestEnvs;
 
 const makeSimRequest = async (
   token: string,
@@ -7,7 +23,10 @@ const makeSimRequest = async (
   tipoPrestamo: string
 ) => {
   const data = {
-    producto: { idProducto: '304', idSubProducto: 'FENIX' },
+    producto: {
+      idProducto: journey_body_idProducto,
+      idSubProducto: journey_body_idSubproducto,
+    },
     tipoCredito: {
       proposito: 'Bienes para el hogar',
       tipo: 'Préstamos Personales',
@@ -15,21 +34,20 @@ const makeSimRequest = async (
     monto: { montoSolicitado: monto },
     cuota: { cuota: cuota, tipoCuota: 'FIJA' },
     frecuencia: tipoPrestamo,
-    moneda: 'PESOS_MEXICANOS',
-    sistemasAmortizacion: 'FRANCES',
+    moneda: journey_body_moneda,
+    sistemasAmortizacion: journey_body_sistemaAmortizacion,
   };
 
   const config: AxiosRequestConfig = {
     method: 'post',
-    url:
-      'https://iamdr.montepiedad.com.mx:4444/api/productos/v1/credito/recomendacion',
+    url: base_url_oag,
     headers: {
-      canal: 'web',
-      unidadOrganizacional: 'FMP',
-      idConsumidor: '51',
-      idDestino: '20',
+      canal: custom_header_canal,
+      unidadOrganizacional: custom_header_unidadOrganizacional,
+      idConsumidor: custom_header_idConsumidor,
+      idDestino: custom_header_idDestino,
       'oauth.bearer': token,
-      Authorization: 'Basic ZmVuaXg6SnFOeUdEbVdueG0w',
+      Authorization: `Basic ${custom_header_auth_token}`,
       'Content-Type': 'application/json',
     },
     data: data,

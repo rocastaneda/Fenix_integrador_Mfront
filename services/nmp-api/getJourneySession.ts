@@ -1,4 +1,17 @@
 import Axios, { AxiosRequestConfig } from 'axios';
+import getEnvVars from '../../environment';
+
+const getJourneySessionEnvs = getEnvVars().getJourneySession.requestData;
+
+const {
+  base_url_oag,
+  custom_header_usuario,
+  custom_header_auth_token,
+  custom_header_idConsumidor,
+  custom_header_idDestino,
+  journey_body_idAplicacion,
+  journey_body_tag,
+} = getJourneySessionEnvs;
 
 const getJourneySessionRequest = async (
   token: string,
@@ -7,21 +20,20 @@ const getJourneySessionRequest = async (
   const date = new Date();
 
   const data = {
-    idAplicacion: 'Fenix-demo-01',
+    idAplicacion: journey_body_idAplicacion,
     fecha: date.toISOString(),
-    tag: 'fenix',
+    tag: journey_body_tag,
   };
 
   const config: AxiosRequestConfig = {
     method: 'post',
-    url:
-      'https://iamdr.montepiedad.com.mx:4444/api/journey/v1/customer/journey/next',
+    url: base_url_oag,
     headers: {
-      usuario: 'usuario',
-      idConsumidor: '51',
-      idDestino: '20',
+      usuario: custom_header_usuario,
+      idConsumidor: custom_header_idConsumidor,
+      idDestino: custom_header_idDestino,
       'oauth.bearer': token,
-      Authorization: 'Basic ZmVuaXg6SnFOeUdEbVdueG0w',
+      Authorization: `Basic ${custom_header_auth_token}`,
       'Content-Type': 'application/json',
     },
     data: data,

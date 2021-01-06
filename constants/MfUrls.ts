@@ -18,7 +18,7 @@ export default Object.freeze({
     module: './RequestFlow',
     scope: 'journeyMF',
     remoteUrl: 'https://fnx-joruney-v2-7fb5f8.netlify.app/remoteEntry.js',
-    // remoteUrl: 'http://localhost:4000/remoteEntry.js',
+    //remoteUrl: 'http://localhost:4000/remoteEntry.js',
   },
   tablaAmortizacionMf: {
     module: './TablasView',
@@ -39,6 +39,12 @@ export default Object.freeze({
     remoteUrl: 'https://fnx-joruney-v2-7fb5f8.netlify.app/remoteEntry.js',
     //remoteUrl: 'http://localhost:4000/remoteEntry.js',
   },
+  advancedSolicitud: {
+    module: './AdvancedStepper',
+    scope: 'journeyMF',
+    remoteUrl: 'https://fnx-joruney-v2-7fb5f8.netlify.app/remoteEntry.js',
+    //remoteUrl: 'http://localhost:5000/remoteEntry.js',
+  },
   createUser: {
     module: './CreateUserNavigator',
     scope: 'createUserMicro',
@@ -49,10 +55,30 @@ export default Object.freeze({
     scope: 'microFrontRegisterClient',
     remoteUrl: 'https://fnx-registro-cliente-d5c6f3.netlify.app/remoteEntry.js',
     // remoteUrl: 'http://localhost:4200/remoteEntry.js',
+    loginModule: {
+      module: './Login',
+      scope: 'microFrontRegisterClient',
+      remoteUrl:
+        'https://fnx-registro-cliente-d5c6f3.netlify.app/remoteEntry.js',
+      // remoteUrl: 'http://localhost:4200/remoteEntry.js',
+    },
   },
   requestCredit: {
     module: './NavigatorRequestCredit',
     scope: 'RequestCredit',
-    remoteUrl: 'https://fnx-solicitud-credito.netlify.app/remoteEntry.js',
+    remoteUrl:
+      'https://fnx-solicitud-credito-401fd0.netlify.app/remoteEntry.js',
+  },
+  clientExist: {
+    module: './ClientExist',
+    scope: 'createUserMicro',
+    remoteUrl: 'https://fnx-creacion-usuario-58b4ef.netlify.app/remoteEntry.js',
+    // remoteUrl: 'http://localhost:4000/remoteEntry.js',
+  },
+  ofertaMf: {
+    module: './DetallesPrestamo',
+    scope: 'fnxOferta',
+    remoteUrl: 'https://tck-nmp-fenix-oferta-4f415f.netlify.app/remoteEntry.js',
+    // remoteUrl: 'http://localhost:4000/remoteEntry.js',
   },
 });

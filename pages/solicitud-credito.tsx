@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../components/acerca-de-ti/Layout';
 import RequestCredit from '../components/RequestCredit';
-import IconPhoneAssistant from '../components/shared/IconPhoneAssistant/IconPhoneAssistant';
+import { store } from '../redux/store';
 
 const RequestCreditPage = () => {
+  useEffect(() => {
+    window['reduxStore'] = store;
+  }, []);
+
   return (
     <Layout>
       <RequestCredit />
-      <IconPhoneAssistant isWithLayout={true} />
     </Layout>
   );
 };

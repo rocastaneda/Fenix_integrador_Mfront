@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import TablaAmortizacion from '../components/TablaAmortizacion';
-import TablaComparativa from '../components/TablaComparativa';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import FooterPrincipal from '../components/FooterPrincipal';
 import { redirectNext } from '../redux/actions/genericActions';
 import Header from '../components/Header';
+import { store } from "../redux/store";
 
 const ResultadoSimulador = () => {
+
+  useEffect(() => {
+    window["reduxStore"] = store;
+  }, []);
+
   return (
     <div>
       <Header />

@@ -136,12 +136,7 @@ const IndexComponent = ({ fields }) => {
           makeSimRequest={makeSimRequest}
         />
       </div>
-      <div
-        className={indexStyle.footer_sticky_bottom_index}
-        style={{ backgroundColor: '#65184e' }}
-      >
-        <FooterPrincipal />
-      </div>
+      <FooterPrincipal />
     </div>
   );
 };
